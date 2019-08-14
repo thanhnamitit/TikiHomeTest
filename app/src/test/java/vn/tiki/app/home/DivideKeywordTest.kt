@@ -16,7 +16,7 @@ class DivideKeywordTest {
     fun removeExtraSpace() {
         val input = " random string    "
         val output = input.divideIfPossible()
-        assertEquals(output.length, output.trim().length);
+        assertEquals(output.length, output.trim().length)
     }
 
     @Test
@@ -36,6 +36,7 @@ class DivideKeywordTest {
     @Test
     fun divideMultiWordWithRegularSpace() {
         assertEquals("nguyễn\nnhật ánh", "nguyễn nhật ánh".divideIfPossible())
+        assertEquals("a\na a", "a a a".divideIfPossible())
         assertNotEquals("nguyễn nhật\nánh", "nguyễn nhật ánh".divideIfPossible())
         assertEquals("nguyễn\nnhật ánh", "nguyễn nhật ánh                 ".divideIfPossible())
         assertEquals("nguyễn\nnhật ánh", "         nguyễn nhật ánh".divideIfPossible())
@@ -44,7 +45,6 @@ class DivideKeywordTest {
 
     @Test
     fun divideMultiWordWithIrregularSpace(){
-        val a = MutableList(1,{1})
         assertEquals("nguyễn\nnhật ánh", "nguyễn        nhật          ánh".divideIfPossible())
         assertNotEquals("nguyễn nhật\nánh", "nguyễn       nhật     ánh".divideIfPossible())
         assertEquals("nguyễn\nnhật ánh", "nguyễn       nhật          ánh                 ".divideIfPossible())
