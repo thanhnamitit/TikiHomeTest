@@ -1,7 +1,8 @@
-package vn.tiki.app.home
+package vn.tiki.app.home.screen
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import vn.tiki.app.home.R
 
 class MainActivity : AppCompatActivity() {
 
