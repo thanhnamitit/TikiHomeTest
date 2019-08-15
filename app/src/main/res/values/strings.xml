@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">TikiHomeTest</string>
+    <string name="home_hot_keywords">Từ khóa hot</string>
+    <string name="home_login_message">Đăng nhập để trải nghiệm tốt nhất</string>
+    <string name="home_login">Đăng nhập</string>
+    <string name="home_register">Đăng ký</string>
 </resources>

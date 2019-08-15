@@ -20,13 +20,59 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <TextView
+                android:id="@+id/label_hot_keywords"
+                style="@style/TextAppearance.AppCompat.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_large"
+                android:layout_marginTop="@dimen/spacing_large"
+                android:text="@string/home_hot_keywords"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_view"
                 android:layout_width="0dp"
-                android:layout_height="64dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_large"
+                android:clipToPadding="false"
+                android:paddingLeft="@dimen/spacing_medium"
+                android:paddingRight="@dimen/spacing_medium"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@id/label_hot_keywords" />
+
+            <TextView
+                android:id="@+id/label_login_message"
+                style="@style/TextAppearance.AppCompat.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_xhxlarge"
+                android:text="@string/home_login_message"
+                app:layout_constraintLeft_toLeftOf="@id/label_hot_keywords"
+                app:layout_constraintTop_toBottomOf="@id/recycler_view" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_large"
+                android:backgroundTint="@android:color/holo_blue_bright"
+                android:text="@string/home_register"
+                android:textColor="@android:color/white"
+                app:layout_constraintLeft_toLeftOf="@id/label_login_message"
+                app:layout_constraintTop_toBottomOf="@id/label_login_message" />
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_xxmedium"
+                android:backgroundTint="@android:color/holo_red_dark"
+                android:text="@string/home_login"
+                android:textColor="@android:color/white"
+                app:layout_constraintLeft_toRightOf="@id/btn_register"
+                app:layout_constraintTop_toTopOf="@id/btn_register" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

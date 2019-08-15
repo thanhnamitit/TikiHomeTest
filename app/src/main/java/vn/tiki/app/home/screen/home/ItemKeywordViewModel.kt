@@ -5,4 +5,5 @@ import vn.tiki.app.home.extension.function.divideIfPossible
 
 class ItemKeywordViewModel(val keyword : Keyword){
     val displayContent : String = keyword.body.divideIfPossible()
+    val numberFromKeyword = keyword.body.hashCode()
 }

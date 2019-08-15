@@ -8,16 +8,18 @@ import androidx.recyclerview.widget.RecyclerView
 import vn.tiki.app.home.data.model.Keyword
 import vn.tiki.app.home.databinding.ItemKeywordBinding
 
-class KeywordsAdapter : RecyclerView.Adapter<KeywordsAdapter.Holder>(){
+class KeywordsAdapter : RecyclerView.Adapter<KeywordsAdapter.Holder>() {
 
     private val keywords = mutableListOf<Keyword>()
 
-    fun setNewDatas(keywords : List<Keyword>){
-        this.keywords.apply {
-            clear()
-            addAll(keywords)
+    fun setNewKeywords(keywords: List<Keyword>) {
+        if (this.keywords != keywords) {
+            this.keywords.apply {
+                clear()
+                addAll(keywords)
+            }
+            notifyDataSetChanged()
         }
-        notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
@@ -32,8 +34,8 @@ class KeywordsAdapter : RecyclerView.Adapter<KeywordsAdapter.Holder>(){
         holder.setData(ItemKeywordViewModel(keywords[position]))
     }
 
-    class Holder(val binding: ViewDataBinding) : RecyclerView.ViewHolder(binding.root){
-        fun setData(viewModel : ItemKeywordViewModel){
+    class Holder(val binding: ViewDataBinding) : RecyclerView.ViewHolder(binding.root) {
+        fun setData(viewModel: ItemKeywordViewModel) {
             binding.setVariable(BR.viewModel, viewModel)
         }
     }

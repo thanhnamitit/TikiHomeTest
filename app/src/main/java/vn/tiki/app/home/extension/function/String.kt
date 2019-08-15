@@ -24,7 +24,7 @@ fun String.divideIfPossible(): String {
     if (output.contains(" ")) {
         // position to add \n is nearest position to mid position of string
         val replacePosition = output.let {
-            // find nearest space position of $it
+            // find nearest space position of $it's center
             var headCursor = (it.length - 1) / 2
             var tailCursor = it.length / 2
             while (output[headCursor] != ' ' && output[tailCursor] != ' ') {

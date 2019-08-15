@@ -35,7 +35,7 @@ class HomeFragment : DaggerFragment() {
         super.onViewCreated(view, savedInstanceState)
         setupObserver()
         initView()
-        viewModel.fetchKeywords()
+        viewModel.fetchKeywordIfNotYet()
     }
 
     private fun setupObserver() {
@@ -55,7 +55,7 @@ class HomeFragment : DaggerFragment() {
 
 
     private fun onDataFetched(keywords: List<Keyword>) {
-        (binding.recyclerView.adapter as? KeywordsAdapter)?.setNewDatas(keywords)
+        (binding.recyclerView.adapter as? KeywordsAdapter)?.setNewKeywords(keywords)
     }
 
 

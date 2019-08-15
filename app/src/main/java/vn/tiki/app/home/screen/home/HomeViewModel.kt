@@ -7,17 +7,21 @@ import vn.tiki.app.home.data.model.Keyword
 import vn.tiki.app.home.data.repository.remote.usecase.FetchKeywordsUseCase
 import javax.inject.Inject
 
-class HomeViewModel @Inject constructor(val fetchKeywordsUseCase : FetchKeywordsUseCase) : ViewModel(){
+class HomeViewModel @Inject constructor(val fetchKeywordsUseCase: FetchKeywordsUseCase) : ViewModel() {
 
-    val keywords : LiveData<List<Keyword>> = Transformations.map(fetchKeywordsUseCase.result){
-        if(it.isSuccess) it.body else null
+    val keywords: LiveData<List<Keyword>> = Transformations.map(fetchKeywordsUseCase.result) {
+        if (it.isSuccess) it.body else null
     }
-    val isLoading : LiveData<Boolean> = Transformations.map(fetchKeywordsUseCase.result){
+    val isLoading: LiveData<Boolean> = Transformations.map(fetchKeywordsUseCase.result) {
         it.isLoading
     }
 
-    fun fetchKeywords(){
+    fun fetchKeywords() {
         fetchKeywordsUseCase.cancel()
         fetchKeywordsUseCase.start()
+    }
+
+    fun fetchKeywordIfNotYet() {
+
     }
 }
