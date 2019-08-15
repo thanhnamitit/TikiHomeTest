@@ -36,9 +36,6 @@ class HomeFragment : DaggerFragment() {
         setupObserver()
         initView()
         viewModel.fetchKeywords()
-        binding.swipeRefresh.setOnRefreshListener {
-            viewModel.fetchKeywords()
-        }
     }
 
     private fun setupObserver() {
@@ -48,6 +45,7 @@ class HomeFragment : DaggerFragment() {
             }
         })
     }
+
     private fun initView(){
         binding.recyclerView.apply {
             layoutManager = LinearLayoutManager(requireContext(), RecyclerView.HORIZONTAL, false)

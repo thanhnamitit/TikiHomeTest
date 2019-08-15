@@ -11,8 +11,8 @@
 
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/swipeRefresh"
         isRefreshing="@{viewModel.isLoading}"
+        onRefreshListener="@{()->viewModel.fetchKeywords()}"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 

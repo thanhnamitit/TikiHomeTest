@@ -9,8 +9,9 @@ fun setIsRefreshing(view: SwipeRefreshLayout, isRefreshing: Boolean) {
         view.isRefreshing = isRefreshing
 }
 
-@BindingAdapter("onRefreshRequested")
-fun setOnRefreshRequested(view: SwipeRefreshLayout, isRefreshing: Boolean) {
-    if (view.isRefreshing != isRefreshing)
-        view.isRefreshing = isRefreshing
+@BindingAdapter("onRefreshListener")
+fun setOnRefreshListener(view: SwipeRefreshLayout, listener: () -> Unit) {
+    view.setOnRefreshListener {
+        listener.invoke()
+    }
 }
