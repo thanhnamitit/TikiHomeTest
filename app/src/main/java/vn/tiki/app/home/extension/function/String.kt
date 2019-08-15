@@ -23,10 +23,10 @@ fun String.divideIfPossible(): String {
     // apply algorithm to divide if keyword more than 1 word
     if (output.contains(" ")) {
         // position to add \n is nearest position to mid position of string
-        val replacePosition = ((output.length - 1) / 2).let {
+        val replacePosition = output.let {
             // find nearest space position of $it
-            var headCursor = it
-            var tailCursor = it
+            var headCursor = (it.length - 1) / 2
+            var tailCursor = it.length / 2
             while (output[headCursor] != ' ' && output[tailCursor] != ' ') {
                 headCursor--
                 tailCursor++

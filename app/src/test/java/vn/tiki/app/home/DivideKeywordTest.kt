@@ -36,6 +36,7 @@ class DivideKeywordTest {
     @Test
     fun divideMultiWordWithRegularSpace() {
         assertEquals("nguyễn\nnhật ánh", "nguyễn nhật ánh".divideIfPossible())
+        assertEquals("kem chong\nnang", "kem chong nang".divideIfPossible())
         assertEquals("a\na a", "a a a".divideIfPossible())
         assertNotEquals("nguyễn nhật\nánh", "nguyễn nhật ánh".divideIfPossible())
         assertEquals("nguyễn\nnhật ánh", "nguyễn nhật ánh                 ".divideIfPossible())
