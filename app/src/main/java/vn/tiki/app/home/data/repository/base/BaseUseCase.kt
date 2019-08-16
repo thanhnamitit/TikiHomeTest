@@ -18,10 +18,10 @@ abstract class BaseUseCase<R, P> {
             .observeOn(AndroidSchedulers.mainThread())
             .doOnSubscribe { result.value = Result.loading() }
             .subscribe({
-                    result.value = Result.fromData(it)
-                }, {
-                    result.value = Result.fromThrowable(it)
-                }
+                result.value = Result.fromData(it)
+            }, {
+                result.value = Result.fromThrowable(it)
+            }
             )
     }
 
@@ -33,6 +33,13 @@ abstract class BaseUseCase<R, P> {
         disposable?.dispose()
     }
 
+    val isRunning
+        get() =   disposable?.let {
+            !it.isDisposed
+        } ?: false
+
+
     abstract fun create(param: P): Observable<R>
+
 
 }

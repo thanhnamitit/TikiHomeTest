@@ -4,4 +4,6 @@
     <string name="home_login_message">Đăng nhập để trải nghiệm tốt nhất</string>
     <string name="home_login">Đăng nhập</string>
     <string name="home_register">Đăng ký</string>
+    <string name="home_load_keywords_failed">Some thing went wrong :)</string>
+    <string name="home_try_again">Try again</string>
 </resources>
