@@ -6,6 +6,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import vn.tiki.app.home.data.model.wrapper.Result
+import vn.tiki.app.home.test.EspressoIdlingResource
 
 abstract class BaseUseCase<R, P> {
     var disposable: Disposable? = null
@@ -16,13 +17,17 @@ abstract class BaseUseCase<R, P> {
         return create(param)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .doOnSubscribe { result.value = Result.loading() }
+            .doOnSubscribe {
+                EspressoIdlingResource.increment()
+                result.value = Result.loading()
+            }
             .subscribe({
+                EspressoIdlingResource.decrement()
                 result.value = Result.fromData(it)
             }, {
+                EspressoIdlingResource.decrement()
                 result.value = Result.fromThrowable(it)
-            }
-            )
+            })
     }
 
     fun start(param: P) {
@@ -34,7 +39,7 @@ abstract class BaseUseCase<R, P> {
     }
 
     val isRunning
-        get() =   disposable?.let {
+        get() = disposable?.let {
             !it.isDisposed
         } ?: false
 

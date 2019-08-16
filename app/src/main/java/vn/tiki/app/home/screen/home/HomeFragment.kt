@@ -46,17 +46,14 @@ class HomeFragment : DaggerFragment() {
         })
     }
 
-    private fun initView(){
+    private fun initView() {
         binding.recyclerView.apply {
             layoutManager = LinearLayoutManager(requireContext(), RecyclerView.HORIZONTAL, false)
             adapter = KeywordsAdapter()
         }
     }
 
-
     private fun onDataFetched(keywords: List<Keyword>) {
         (binding.recyclerView.adapter as? KeywordsAdapter)?.setNewKeywords(keywords)
     }
-
-
 }

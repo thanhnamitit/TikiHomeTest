@@ -22,7 +22,7 @@ class HomeViewModel @Inject constructor(private val fetchKeywordsUseCase: FetchK
     }
 
     fun fetchKeywordIfNotYet() {
-        if (!fetchKeywordsUseCase.isRunning)
+        if (!fetchKeywordsUseCase.isRunning && keywords.value == null)
             fetchKeywords()
     }
 }

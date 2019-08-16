@@ -55,7 +55,7 @@
                     style="@style/TextAppearance.AppCompat.Title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/spacing_xhxlarge"
+                    android:layout_marginTop="@dimen/spacing_xlarge"
                     android:text="@string/home_login_message"
                     app:layout_constraintLeft_toLeftOf="@id/label_hot_keywords"
                     app:layout_constraintTop_toBottomOf="@id/recycler_view" />
@@ -74,7 +74,7 @@
                 <com.google.android.material.button.MaterialButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/spacing_xxmedium"
+                    android:layout_marginStart="@dimen/spacing_xmedium"
                     android:backgroundTint="@android:color/holo_red_dark"
                     android:text="@string/home_login"
                     android:textColor="@android:color/white"
@@ -91,8 +91,8 @@
 
                 <ImageView
                     android:id="@+id/img_error"
-                    android:layout_width="@dimen/spacing_xxxxlarge"
-                    android:layout_height="@dimen/spacing_xxxxlarge"
+                    android:layout_width="@dimen/spacing_xxlarge"
+                    android:layout_height="@dimen/spacing_xxlarge"
                     android:src="@android:drawable/stat_notify_error"
                     android:tint="@android:color/darker_gray"
                     app:layout_constraintBottom_toTopOf="@id/label_error"

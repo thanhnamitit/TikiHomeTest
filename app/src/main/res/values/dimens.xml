@@ -1,22 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="spacing_xxxxlarge">72dp</dimen>
-    <dimen name="spacing_xxxlarge">60dp</dimen>
-    <dimen name="spacing_xx_large">40dp</dimen>
-    <dimen name="spacing_xxx_large">50dp</dimen>
-    <dimen name="spacing_xxlarge">32dp</dimen>
-    <dimen name="spacing_xhxlarge">26dp</dimen>
-    <dimen name="spacing_xlarge">20dp</dimen>
+    <dimen name="spacing_xxlarge">72dp</dimen>
+    <dimen name="spacing_xlarge">26dp</dimen>
     <dimen name="spacing_large">16dp</dimen>
-    <dimen name="spacing_xxmedium">12dp</dimen>
-    <dimen name="spacing_xxxmedium">11dp</dimen>
-    <dimen name="spacing_xmedium">10dp</dimen>
+    <dimen name="spacing_xmedium">12dp</dimen>
     <dimen name="spacing_medium">8dp</dimen>
-    <dimen name="spacing_xxsmall">7dp</dimen>
-    <dimen name="spacing_xxxsmall">6dp</dimen>
-    <dimen name="spacing_small">4dp</dimen>
-    <dimen name="spacing_x_small">5dp</dimen>
-    <dimen name="spacing_xsmall">2dp</dimen>
 
-    <dimen name="height_home_recycler_view">72dp</dimen>
 </resources>

@@ -8,6 +8,7 @@ import vn.tiki.app.home.screen.home.HomeFragment
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        supportFragmentManager.beginTransaction().replace(android.R.id.content, HomeFragment()).commit()
+        if (null == savedInstanceState)
+            supportFragmentManager.beginTransaction().replace(android.R.id.content, HomeFragment()).commit()
     }
 }
