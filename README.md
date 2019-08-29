@@ -8,6 +8,7 @@ Home test project to apply for Android Developer position
 - [The project has following packages](#the-project-has-following-packages)
 - [Library reference resources](#library-reference-resources)
 - [Note](#note)
+- [Result](#result)
 
 ## Demo
 <p align="center">
@@ -35,9 +36,15 @@ MVVM
 ## Library reference resources
 - RxJava2: https://github.com/ReactiveX/RxJava
 - Dagger2: https://github.com/google/dagger
-- Retrofit: https://github.com/google/dagger
-- Android jetpack: https://github.com/google/dagger
+- Retrofit: https://square.github.io/retrofit/
+- Android jetpack: https://developer.android.com/jetpack
 
 ## Note
 - App can run smoothly, data be kept when config change, user can refresh data,...
 - Project follow MVVM architecture, it's easy to maintain and add new features
+
+## Result
+I passed the test and received an offer after 2 more interviews ^^!
+<p align="center">
+  <img src="./result.jpg">
+</p>
